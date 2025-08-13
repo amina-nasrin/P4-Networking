@@ -109,7 +109,7 @@ control MyIngress(inout headers hdr,
         if (hdr.ipv4.isValid()) {
             if(hdr.ipv4.ttl<=1){
                 mark_to_drop(standard_metadata);
-            else{
+            } else{
                 ipv4_lpm.apply();
             }
         }
